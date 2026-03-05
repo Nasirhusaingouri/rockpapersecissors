@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimePass-Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Rock Paper Sessior</h1>
+    <div class="box">
+        <h2 class="status">SCORE</h2>
+        <h3 class="user-move rrr">YOU:</h3>
+        <h3 class="computer-move rrr">COMPUTER:</h3>
+        <h3 class="result rrr">WINNER:</h3>
+        <h3 class="score rrr">SCORE:</h3>
+    </div>
+
+    <button class="btn btn-choice" onclick=" let computerchoice = choices[Math.floor(Math.random() * choices.length)];
+        userchoice='ROAK';
+
+        userchoiceShow(userchoice)
+        computerchoiceShow(computerchoice)
+        checkResult(userchoice, computerchoice)
+          
+        localStorage.setItem('score',JSON.stringify(score));
+        document.querySelector('.result').innerText = `WINNER:${result}`
+        document.querySelector('.score').innerText=`WIN: ${score.win}  LOST: ${score.lost}  TIE: ${score.tie}`
+    ">ROAK</button>
+
+
+    <button class="btn btn-choice" onclick=" computerchoice = choices[Math.floor(Math.random() * choices.length)];
+        userchoice='PAPER';
+
+        userchoiceShow(userchoice)
+        computerchoiceShow(computerchoice)
+        checkResult(userchoice, computerchoice)
+        
+        localStorage.setItem('score',JSON.stringify(score));
+        document.querySelector('.result').innerText = `WINNER:${result}`
+        document.querySelector('.score').innerText=`WIN: ${score.win}  LOST: ${score.lost}  TIE: ${score.tie}`
+    ">PAPER</button>
+
+    <button class="btn btn-choice" onclick=" computerchoice = choices[Math.floor(Math.random() * choices.length)];
+        userchoice='SESSIOR';
+
+        userchoiceShow(userchoice)     
+        computerchoiceShow(computerchoice)
+        checkResult(userchoice, computerchoice)
+
+          
+        localStorage.setItem('score',JSON.stringify(score));
+        document.querySelector('.result').innerText = `WINNER:${result}`
+        document.querySelector('.score').innerText=`WIN: ${score.win}  LOST: ${score.lost}  TIE: ${score.tie}`
+     ">SESSIOR</button>
+
+    <button class="btn btn-refresh" onclick="
+        document.querySelector('.user-move').innerText = `USER:`
+          document.querySelector('.computer-move').innerText = `COMPUTER:`
+                document.querySelector('.result').innerText = `WINNER:`
+
+        document.querySelector('.score').innerText=`WIN: ${score.win=0}  LOST: ${score.lost=0}  TIE: ${score.tie=0}`
+        localStorage.clear();
+    ">Refresh</button>
+</body>
+<script src="script.js">
+</script>
+
+</html>
